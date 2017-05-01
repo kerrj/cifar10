@@ -5,33 +5,35 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as p
 
-iterations=15
+iterations=20
 
 #change this to train different models
 modelname='cifar.h5'
 #load training data
-traininglabels=np.load('/users/justin/Documents/tensorflow/images/cifar/labels.npy')
-trainingimgs=np.load('/users/justin/Documents/tensorflow/images/cifar/images.npy')
+traininglabels=np.load('/users/justin/Documents/NeuralNets/images/cifar/labels.npy')
+trainingimgs=np.load('/users/justin/Documents/NeuralNets/images/cifar/images.npy')
 
 #load test data
-testlabels=np.load('/users/justin/Documents/tensorflow/images/cifar/testlabels.npy')
-testimgs=np.load('/users/justin/Documents/tensorflow/images/cifar/test.npy')
+testlabels=np.load('/users/justin/Documents/NeuralNets/images/cifar/testlabels.npy')
+testimgs=np.load('/users/justin/Documents/NeuralNets/images/cifar/test.npy')
 
 #load model
-model=keras.models.load_model('/users/justin/Documents/tensorflow/models/'+modelname)
+model=keras.models.load_model('/users/justin/Documents/NeuralNets/models/'+modelname)
 #model=cifar10test.compile_model()
 
 
-model.optimizer=keras.optimizers.Adadelta(lr=.01)
+#model.optimizer=keras.optimizers.Adadelta(lr=1)
 print(model.optimizer.get_config())
 #fit model
-history=model.fit(trainingimgs,traininglabels,epochs=iterations,batch_size=5000)
+history=model.fit(trainingimgs,traininglabels,epochs=iterations,batch_size=1000)
+
+
 
 #evaluate model with test set
 print(model.evaluate(testimgs,testlabels))
 
 #resave model, this overwrites the other model
-model.save('/users/justin/Documents/tensorflow/models/'+modelname)
+model.save('/users/justin/Documents/NeuralNets/models/'+modelname)
 
 
 p.plot(history.history['loss'])

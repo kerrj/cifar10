@@ -20,34 +20,34 @@ def parse_data(data,num_pictures):
     return np.array(imglist)
 
 #numimgs=10000;
-#d=unpickle('/users/justin/Documents/tensorflow/cifar-10/data_batch_1')
+#d=unpickle('/users/justin/Documents/NeuralNets/cifar-10/data_batch_1')
 #data=d[b'data']
 #masterimgs=parse_data(data,numimgs)
 #print(masterimgs.shape)
-#d=unpickle('/users/justin/Documents/tensorflow/cifar-10/data_batch_2')
+#d=unpickle('/users/justin/Documents/NeuralNets/cifar-10/data_batch_2')
 #data=d[b'data']
 #imgs=parse_data(data,numimgs)
 #masterimgs=np.append(masterimgs,imgs,0);
 #print(masterimgs.shape)
-#d=unpickle('/users/justin/Documents/tensorflow/cifar-10/data_batch_3')
+#d=unpickle('/users/justin/Documents/NeuralNets/cifar-10/data_batch_3')
 #data=d[b'data']
 #imgs=parse_data(data,numimgs)
 #masterimgs=np.append(masterimgs,imgs,0);
 #print(masterimgs.shape)
-#d=unpickle('/users/justin/Documents/tensorflow/cifar-10/data_batch_4')
+#d=unpickle('/users/justin/Documents/NeuralNets/cifar-10/data_batch_4')
 #data=d[b'data']
 #imgs=parse_data(data,numimgs)
 #masterimgs=np.append(masterimgs,imgs,0);
 #print(masterimgs.shape)
-#d=unpickle('/users/justin/Documents/tensorflow/cifar-10/data_batch_5')
+#d=unpickle('/users/justin/Documents/NeuralNets/cifar-10/data_batch_5')
 #data=d[b'data']
 #imgs=parse_data(data,numimgs)
 #masterimgs=np.append(masterimgs,imgs,0);
 #print(masterimgs.shape)
-#np.save('/users/justin/Documents/tensorflow/images/cifar/images.npy',masterimgs)
+#np.save('/users/justin/Documents/NeuralNets/images/cifar/images.npy',masterimgs)
 
 #test images
-d=unpickle('/users/justin/Documents/tensorflow/cifar-10/test_batch')
+d=unpickle('/users/justin/Documents/NeuralNets/cifar-10/test_batch')
 data=d[b'data']
 imgs=parse_data(data,10000)
-np.save('/users/justin/Documents/tensorflow/images/cifar/test.npy',imgs)
+np.save('/users/justin/Documents/NeuralNets/images/cifar/test.npy',imgs)
