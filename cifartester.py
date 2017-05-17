@@ -1,4 +1,4 @@
-import keras
+import tensorflow.contrib.keras as keras
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as p
@@ -20,11 +20,11 @@ def get_label(img,model,labels,answer):
          
 #change this for testing different models
 modelname='cifar.h5'
-model=keras.models.load_model('/users/justin/Documents/NeuralNets/models/'+modelname)
-testlabels=np.load('/users/justin/Documents/NeuralNets/images/cifar/testlabels.npy')
-testimgs=np.load('/users/justin/Documents/NeuralNets/images/cifar/test.npy')
+model=keras.models.load_model('/users/justin/Documents/tensorflow/models/'+modelname)
+testlabels=np.load('/users/justin/Documents/tensorflow/images/cifar/testlabels.npy')
+testimgs=np.load('/users/justin/Documents/tensorflow/images/cifar/test.npy')
 
-d=cifar10test.unpickle('/users/justin/Documents/NeuralNets/cifar-10/batches.meta')
+d=cifar10test.unpickle('/users/justin/Documents/tensorflow/cifar-10/batches.meta')
 labels=d[b'label_names']
 
 i=1000;
